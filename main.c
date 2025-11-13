@@ -1,24 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//실습 3
-
-void swap(int* x,int *y) //여기서 *은 어디에 붙이든 같음 
-{
-     int temp;
-     temp=*x;
-     *x=*y;
-     *y=temp;
-}
+//실습 4
 
 int main(int argc, char *argv[])
 {
   
-  int a=3,b=5;
-  //int *x,y; 이렇게 하면 x만 포인터 변수가 됨(확실 X)  
+  int i;
+  int grade[5];
+  int sum=0;
   
-  swap(&a,&b);
-  printf("a:%i, b:%i\n",a,b);
+  for(i=0; i<5; i++)
+  {
+     printf("grade[%i]=",i);
+     scanf("%d",&grade[i]);
+  }
+  
+  for(i=0; i<5; i++)
+  {
+     printf("grade[%i]=%i\n",i,*(grade+1));
+     sum=sum+ *(grade+i);
+  }
+  
+  printf("Average : %i\n",sum/5);
   
   system("PAUSE");	
   return 0;
