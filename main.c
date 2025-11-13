@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//실습 6 (5건너뜀) 
+//실습 7
+
+char *proverb="All that glisters is not gold.";
+void setPointer(char** q)  // 1. 여기에 이중포인터 적용시 
+{
+  *q=proverb; // 2. 여기에 *하나 붙이고 
+}
 
 int main(int argc, char *argv[])
 {
+  char *p="zzz";
   
-  int i=100;
-  int *p=&i;
-  int **q=&p;
-  
-  *p=200; 
-  printf("i=%i, *p=%d, **q=%d\n",i,*p,**q);
-  
-  **q=300;
-  printf("i=%i, *p=%d, **q=%d\n", i, *p, **q);
+  setPointer(&p); // 3. 여기에 &붙이기 
+  printf("%s \n",p);
   
   system("PAUSE");	
   return 0;
